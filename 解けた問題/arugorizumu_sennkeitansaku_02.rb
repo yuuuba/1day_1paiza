@@ -4,7 +4,7 @@
 # さらに数列にｋが複数含まれる場合は数列を先頭から探して最初のｋが何番目にあるか出力= .index
 
 n = gets.chomp.to_s
-number_sequence = gets.chomp.to_s
+number_sequence = gets.chomp.split(" ").map(&:to_s)
 k = gets.chomp.to_s
 
 # 数列にｋが含まれていない場合、０と出力
@@ -14,3 +14,6 @@ if !number_sequence.include?(k)
 elsif number_sequence.include?(k)
   puts number_sequence.index(k).to_i + 1
 end
+
+#7行目.splitでStringから配列に変更
+#11行目はchatGPTでヒントを得た（調べ方を知りたい、けど気にしすぎ・・？）
