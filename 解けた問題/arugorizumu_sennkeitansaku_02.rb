@@ -1,3 +1,5 @@
+# https://paiza.jp/works/mondai/sequence_search_problems/sequence_search_problems_search_value_step1/edit?language_uid=ruby&t=f7bb83e8734d449efebd0a57c4da686b
+
 # 整数n、次の行で数列、次の行で整数ｋ
 # 整数ｋが数列の何番目にあるか求める = .index
 # 条件は数列にｋが含まれない場合、０を出力 = if文
