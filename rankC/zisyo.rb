@@ -6,7 +6,7 @@
 # パイザ君は A グループの各人の仕事を結局 C グループの誰が行うことになるのか知りたがっています。
 # A グループの人のそれぞれが最終的に C グループの誰に仕事を頼むことになるのかを、 A グループの人の番号が小さい順に p 行出力してください。
 
-
+# テスト通らない
 # ABCの人数が与えられる
 a,b,c = gets.chomp.split.map(&:to_i)
 a_to_b = []
@@ -28,4 +28,28 @@ end
 # 格納した配列のindex0(A)の数値が小さい順に並び替え、そのまま全て出力する
 a_to_c.each do |k|
   puts k.index(0).sort
+end
+
+
+#gpt
+a, b, c = gets.chomp.split.map(&:to_i)
+
+a_to_b = {}
+b_to_c = {}
+
+a.times do
+  a_person, b_person = gets.chomp.split.map(&:to_i)
+  a_to_b[a_person] = b_person
+end
+
+b.times do
+  b_person, c_person = gets.chomp.split.map(&:to_i)
+  b_to_c[b_person] = c_person
+end
+
+a.times do |i|
+  a_person = i + 1
+  b_person = a_to_b[a_person]
+  c_person = b_to_c[b_person]
+  puts "#{a_person} #{c_person}"
 end
