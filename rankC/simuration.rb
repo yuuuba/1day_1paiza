@@ -24,7 +24,7 @@ HP = gets.chomp.to_i
 class Character
 end
 
-class Hero << Character
+class Hero < Character
   attr_reader :name, :hp
 
   def initialize(name,hp = HP)
@@ -59,7 +59,7 @@ class Hero << Character
 
 end
 
-class Monster << Character
+class Monster < Character
   attr_reader :name, :hp
 
   def initialize(name, hp)
@@ -82,5 +82,19 @@ class Monster << Character
 end
 
 class Battale
+  def initialize(hero, monster)
+    @hero = hero
+    @monster = monster
+  end
 
+  def start
+    @hero.attack(@monster)
+    @monster.attack(@player)
+  end
 end
+
+paiza = Hero.new("paiza",HP)
+zoma = Monster.new("zoma",100000)
+
+battle1 = Battle.new(paiza,zoma)
+battle1.start
