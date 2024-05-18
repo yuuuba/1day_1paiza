@@ -43,3 +43,21 @@ words.each do |word|
 end
 
 puts history
+
+#gpt
+n = gets.to_i
+history = []
+
+# 検索ワードを配列に格納
+n.times do
+  word = gets.chomp
+  # すでに履歴にある場合は削除
+  if history.include?(word)
+    history.delete(word)
+  end
+  # 先頭に追加
+  history.unshift(word)
+end
+
+# 検索履歴を出力
+puts history
