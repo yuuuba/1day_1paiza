@@ -44,18 +44,30 @@ class Izakaya
   end
 
   # 第一引数を比較していき最大の数値の数の配列を作る
+  def create_numbox
+    @box = [0] #TODO:ここもおかしいしコンストラクタの受け取り方もおかしい？
+    @number.each do |num|
+      if num >= @box ? @box << num : nil
+    end
+  end
 
-  # １であれば１に追加、かつオーダーの種類判定するメソッド作る（最終的にnilを０にする）
+  # １であれば１に追加、のような判定メソッドその後オーダーの種類判定するメソッド作る（最終的にnilを０にする）
+  def order_judgement
+    if @box.include?() ?  << : nil
+    @box.compact!
+  end
 
   #上で出来た配列のそれぞれの金額を改行区切りで出力
-
+  def accounting
+    @box
+  end
 end
 
-puts formatted_order
+
+today_order = Izakaya.new(formatted_order)
+puts today_order.change_int.create_numbox.order_judgement.accounting
 
 
-
-
-
+# 途中でのデバッグの方法
 # 連番で箱を作る、判定する、足すなり引くなりする
 # 連番が同じものがあればそこに足すなり引くなりした結果を足す
