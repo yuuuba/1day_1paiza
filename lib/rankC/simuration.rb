@@ -81,15 +81,17 @@ class Monster < Character
     end
 end
 
-class Battale
+class GameMaster
   def initialize(hero, monster)
     @hero = hero
     @monster = monster
   end
 
   def start
-    @hero.attack(@monster)
-    @monster.attack(@player)
+    loop do
+      @hero.attack(@monster)
+      @monster.attack(@player)
+    end
   end
 end
 
